@@ -81,14 +81,18 @@ nav ul li a:hover {
 /* 主要内容区域 */
 .content-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 30px 0;
 }
 
 .main-content {
+    width: 65%;
+    margin-right: 30px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin: 30px 0;
 }
 
 /* 文章卡片样式 */
@@ -539,13 +543,11 @@ footer p {
 
     .main-content {
         width: 65%;
-        float: none;
-        margin-right: 0;
+        margin-right: 30px;
     }
 
     .sidebar {
         width: 30%;
-        float: none;
         margin-top: 0;
     }
 
@@ -595,11 +597,13 @@ footer p {
         gap: 10px;
     }
 
-    .post-detail-container {
+    .post-detail-container,
+    .content-wrapper {
         flex-direction: column;
     }
 
-    .post-detail {
+    .post-detail,
+    .main-content {
         width: 100%;
         margin-right: 0;
         margin-bottom: 30px;
