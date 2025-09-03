@@ -50,7 +50,7 @@ async function getData() {
         
         <p>除了上述特性，ES6+还引入了模块系统、类、迭代器、生成器等众多新特性，这些特性共同使JavaScript成为一门更强大、更易用的编程语言。</p>`,
         author: "张三",
-        date: "2023-06-15",
+        date: "2025-06-15",
         category: "技术",
         tags: ["JavaScript", "ES6", "前端"],
         image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
@@ -107,7 +107,7 @@ async function getData() {
         
         <p>CSS Grid布局为网页设计提供了前所未有的灵活性和控制力，结合Flexbox使用，可以解决几乎所有的布局问题。</p>`,
         author: "李四",
-        date: "2023-05-20",
+        date: "2025-05-20",
         category: "技术",
         tags: ["CSS", "Grid", "布局"],
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
@@ -139,7 +139,7 @@ async function getData() {
         
         <p>云南，这片神奇的土地，我会再来的！</p>`,
         author: "王五",
-        date: "2023-04-10",
+        date: "2025-04-10",
         category: "旅行",
         tags: ["旅行", "云南", "日记"],
         image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
@@ -171,7 +171,7 @@ async function getData() {
         
         <p>《人类简史》不仅是一本历史书，更是一本哲学书。它让我们思考：我们从哪里来？我们现在在哪里？我们要到哪里去？这些问题，值得每个人深思。</p>`,
         author: "赵六",
-        date: "2023-03-05",
+        date: "2025-03-05",
         category: "读书",
         tags: ["读书", "人类简史", "历史"],
         image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
@@ -308,7 +308,7 @@ function processData(data) {
         
         <p>记住，性能优化是一个持续的过程，需要定期监测和改进。使用性能监测工具（如Lighthouse、WebPageTest等）可以帮助你发现性能瓶颈，并针对性地进行优化。</p>`,
         author: "张三",
-        date: "2023-02-18",
+        date: "2025-02-18",
         category: "技术",
         tags: ["前端", "性能优化", "JavaScript"],
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
@@ -357,7 +357,7 @@ function processData(data) {
         
         <p>记住，阅读是一场旅程，而不是一场比赛。享受这个过程，让书籍成为你生活中的良师益友。</p>`,
         author: "李四",
-        date: "2023-01-22",
+        date: "2025-01-22",
         category: "生活",
         tags: ["阅读", "习惯", "生活"],
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
@@ -371,13 +371,13 @@ const comments = {
         {
             id: 1,
             author: "小明",
-            date: "2023-06-16",
+            date: "2025-06-16",
             content: "这篇文章写得非常好，对ES6+新特性的介绍很全面，特别是对Promise和async/await的解释，让我对异步编程有了更深入的理解。"
         },
         {
             id: 2,
             author: "小红",
-            date: "2023-06-17",
+            date: "2025-06-17",
             content: "作为前端开发新手，这篇文章对我帮助很大。我已经开始在实际项目中使用箭头函数和解构赋值，确实让代码变得更简洁了。"
         }
     ],
@@ -385,7 +385,7 @@ const comments = {
         {
             id: 1,
             author: "设计师小王",
-            date: "2023-05-21",
+            date: "2025-05-21",
             content: "CSS Grid确实是布局的利器，自从学会了Grid，我再也不用为复杂的布局发愁了。文章中的例子很实用，谢谢分享！"
         }
     ],
@@ -393,13 +393,13 @@ const comments = {
         {
             id: 1,
             author: "旅行爱好者",
-            date: "2023-04-11",
+            date: "2025-04-11",
             content: "云南真是个美丽的地方，我也去过，特别是洱海，太美了！看了你的文章，仿佛又回到了那段美好的时光。"
         },
         {
             id: 2,
             author: "小李",
-            date: "2023-04-12",
+            date: "2025-04-12",
             content: "写得真好，我也想去云南旅行了！请问你在大理住的民宿叫什么名字？可以推荐一下吗？"
         }
     ]

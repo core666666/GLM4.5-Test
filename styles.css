@@ -8,8 +8,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+    color: #2c3e50;
+    background-color: #f5f9ff;
 }
 
 .container {
@@ -21,12 +21,12 @@ body {
 
 a {
     text-decoration: none;
-    color: #0066cc;
+    color: #1e6ba8;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #004499;
+    color: #155a8e;
 }
 
 img {
@@ -36,11 +36,12 @@ img {
 
 /* 头部样式 */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(30, 107, 168, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid #e1ecf7;
 }
 
 header .container {
@@ -53,7 +54,7 @@ header .container {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #1e6ba8;
 }
 
 nav ul {
@@ -67,15 +68,16 @@ nav ul li {
 
 nav ul li a {
     font-weight: 500;
-    color: #555;
+    color: #546e7a;
     padding: 5px 10px;
     border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 nav ul li a.active,
 nav ul li a:hover {
-    color: #0066cc;
-    background-color: rgba(0, 102, 204, 0.1);
+    color: #1e6ba8;
+    background-color: rgba(30, 107, 168, 0.1);
 }
 
 /* 主要内容区域 */
@@ -104,21 +106,22 @@ nav ul li a:hover {
 }
 
 .post-card {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(30, 107, 168, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e1ecf7;
 }
 
 .post-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(30, 107, 168, 0.15);
 }
 
 .post-card-image {
     height: 200px;
-    background-color: #e9ecef;
+    background-color: #e1ecf7;
     overflow: hidden;
 }
 
@@ -135,10 +138,11 @@ nav ul li a:hover {
 .post-card-title {
     font-size: 20px;
     margin-bottom: 10px;
+    color: #2c3e50;
 }
 
 .post-card-excerpt {
-    color: #666;
+    color: #546e7a;
     margin-bottom: 15px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -150,7 +154,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
-    color: #888;
+    color: #78909c;
 }
 
 .post-list {
@@ -161,18 +165,19 @@ nav ul li a:hover {
 }
 
 .post-list-item {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(30, 107, 168, 0.08);
     display: flex;
     gap: 20px;
+    border: 1px solid #e1ecf7;
 }
 
 .post-list-item-image {
     width: 150px;
     height: 150px;
-    background-color: #e9ecef;
+    background-color: #e1ecf7;
     border-radius: 6px;
     overflow: hidden;
     flex-shrink: 0;
@@ -191,16 +196,17 @@ nav ul li a:hover {
 .post-list-item-title {
     font-size: 18px;
     margin-bottom: 10px;
+    color: #2c3e50;
 }
 
 .post-list-item-excerpt {
-    color: #666;
+    color: #546e7a;
     margin-bottom: 10px;
 }
 
 .post-list-item-meta {
     font-size: 14px;
-    color: #888;
+    color: #78909c;
 }
 
 /* 侧边栏样式 */
@@ -210,22 +216,24 @@ nav ul li a:hover {
 }
 
 .widget {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(30, 107, 168, 0.08);
+    border: 1px solid #e1ecf7;
 }
 
 .widget h3 {
     font-size: 18px;
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e1ecf7;
+    color: #1e6ba8;
 }
 
 .widget p {
-    color: #666;
+    color: #546e7a;
     margin-bottom: 10px;
 }
 
@@ -240,11 +248,12 @@ nav ul li a:hover {
 .categories li a {
     display: flex;
     justify-content: space-between;
-    color: #555;
+    color: #546e7a;
+    transition: color 0.3s ease;
 }
 
 .categories li a:hover {
-    color: #0066cc;
+    color: #1e6ba8;
 }
 
 .popular-posts {
@@ -254,7 +263,7 @@ nav ul li a:hover {
 .popular-posts li {
     margin-bottom: 12px;
     padding-bottom: 12px;
-    border-bottom: 1px dashed #eee;
+    border-bottom: 1px dashed #e1ecf7;
 }
 
 .popular-posts li:last-child {
@@ -265,18 +274,18 @@ nav ul li a:hover {
 
 .popular-posts li a {
     display: block;
-    color: #555;
+    color: #546e7a;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .popular-posts li a:hover {
-    color: #0066cc;
+    color: #1e6ba8;
 }
 
 .popular-posts li a:before {
     content: "▶";
-    color: #0066cc;
+    color: #1e6ba8;
     margin-right: 8px;
     font-size: 12px;
 }
@@ -288,15 +297,16 @@ nav ul li a:hover {
 }
 
 .tag-cloud a {
-    background-color: #e9ecef;
-    color: #555;
+    background-color: #e1ecf7;
+    color: #546e7a;
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 14px;
+    transition: all 0.3s ease;
 }
 
 .tag-cloud a:hover {
-    background-color: #0066cc;
+    background-color: #1e6ba8;
     color: #fff;
 }
 
@@ -315,17 +325,18 @@ nav ul li a:hover {
 }
 
 .post {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(30, 107, 168, 0.08);
     margin-bottom: 30px;
+    border: 1px solid #e1ecf7;
 }
 
 .post-title {
     font-size: 28px;
     margin-bottom: 15px;
-    color: #333;
+    color: #2c3e50;
 }
 
 .post-meta {
@@ -333,7 +344,7 @@ nav ul li a:hover {
     gap: 15px;
     margin-bottom: 20px;
     font-size: 14px;
-    color: #888;
+    color: #78909c;
 }
 
 .post-tags {
@@ -344,15 +355,16 @@ nav ul li a:hover {
 }
 
 .post-tags a {
-    background-color: #e9ecef;
-    color: #555;
+    background-color: #e1ecf7;
+    color: #546e7a;
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 14px;
+    transition: all 0.3s ease;
 }
 
 .post-tags a:hover {
-    background-color: #0066cc;
+    background-color: #1e6ba8;
     color: #fff;
 }
 
@@ -363,18 +375,19 @@ nav ul li a:hover {
 
 .post-content p {
     margin-bottom: 15px;
+    color: #546e7a;
 }
 
 .post-content h2 {
     font-size: 22px;
     margin: 25px 0 15px;
-    color: #333;
+    color: #2c3e50;
 }
 
 .post-content h3 {
     font-size: 18px;
     margin: 20px 0 10px;
-    color: #333;
+    color: #2c3e50;
 }
 
 .post-content img {
@@ -383,27 +396,29 @@ nav ul li a:hover {
 }
 
 .post-content blockquote {
-    border-left: 4px solid #0066cc;
+    border-left: 4px solid #1e6ba8;
     padding-left: 15px;
     margin: 15px 0;
-    color: #666;
+    color: #546e7a;
     font-style: italic;
 }
 
 .post-content pre {
-    background-color: #f5f5f5;
+    background-color: #e1ecf7;
     padding: 15px;
     border-radius: 6px;
     overflow-x: auto;
     margin: 15px 0;
+    border: 1px solid #d1e3f3;
 }
 
 .post-content code {
-    background-color: #f5f5f5;
+    background-color: #e1ecf7;
     padding: 2px 4px;
     border-radius: 3px;
     font-family: monospace;
     font-size: 14px;
+    color: #1e6ba8;
 }
 
 .post-navigation {
@@ -414,21 +429,28 @@ nav ul li a:hover {
 }
 
 .post-navigation a {
-    color: #0066cc;
+    color: #1e6ba8;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.post-navigation a:hover {
+    color: #155a8e;
 }
 
 /* 评论区域样式 */
 .comments-section {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(30, 107, 168, 0.08);
+    border: 1px solid #e1ecf7;
 }
 
 .comments-section h3 {
     font-size: 22px;
     margin-bottom: 20px;
+    color: #1e6ba8;
 }
 
 .comment-form {
@@ -454,9 +476,16 @@ nav ul li a:hover {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #d1e3f3;
     border-radius: 4px;
     font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #1e6ba8;
+    outline: none;
 }
 
 .form-group textarea {
@@ -464,7 +493,7 @@ nav ul li a:hover {
 }
 
 .btn {
-    background-color: #0066cc;
+    background-color: #1e6ba8;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -475,7 +504,7 @@ nav ul li a:hover {
 }
 
 .btn:hover {
-    background-color: #0055aa;
+    background-color: #155a8e;
 }
 
 .comments-list {
@@ -485,7 +514,7 @@ nav ul li a:hover {
 }
 
 .comment {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e1ecf7;
     padding-bottom: 20px;
 }
 
@@ -501,24 +530,26 @@ nav ul li a:hover {
 
 .comment-author {
     font-weight: 500;
+    color: #2c3e50;
 }
 
 .comment-date {
-    color: #888;
+    color: #78909c;
     font-size: 14px;
 }
 
 .comment-content {
-    color: #555;
+    color: #546e7a;
     line-height: 1.6;
 }
 
 /* 页脚样式 */
 footer {
-    background-color: #333;
+    background-color: #1e6ba8;
     color: #fff;
     padding: 20px 0;
     margin-top: 50px;
+    box-shadow: 0 -2px 10px rgba(30, 107, 168, 0.2);
 }
 
 footer .container {
@@ -526,7 +557,7 @@ footer .container {
 }
 
 footer p {
-    color: #ccc;
+    color: #e1ecf7;
 }
 
 /* 响应式设计 */
