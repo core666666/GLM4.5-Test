@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章分类 - 我的博客</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="index.html">我的博客</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="categories.html" class="active">分类</a></li>
+                    <li><a href="about.html">关于</a></li>
+                    <li><a href="contact.html">联系</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <main class="main-content">
+                <section class="categories-page">
+                    <h1>文章分类</h1>
+                    <p class="intro">浏览不同主题的文章，找到您感兴趣的内容。</p>
+                    
+                    <div class="categories-container" id="categories-container">
+                        <!-- 分类将通过JavaScript动态加载 -->
+                    </div>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3>热门文章</h3>
+                    <ul class="popular-posts">
+                        <li><a href="post.html?id=1">JavaScript ES6+ 新特性详解</a></li>
+                        <li><a href="post.html?id=2">CSS Grid 布局完全指南</a></li>
+                        <li><a href="post.html?id=5">前端性能优化技巧</a></li>
+                        <li><a href="post.html?id=3">我的旅行日记：云南之行</a></li>
+                        <li><a href="post.html?id=4">《人类简史》读后感</a></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3>标签云</h3>
+                    <div class="tag-cloud">
+                        <a href="#">JavaScript</a>
+                        <a href="#">CSS</a>
+                        <a href="#">HTML</a>
+                        <a href="#">Web开发</a>
+                        <a href="#">前端</a>
+                        <a href="#">旅行</a>
+                        <a href="#">读书</a>
+                        <a href="#">生活感悟</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 我的博客. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

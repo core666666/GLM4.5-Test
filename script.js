@@ -408,15 +408,31 @@ const comments = {
 // DOM加载完成后执行
 document.addEventListener('DOMContentLoaded', function() {
     // 判断当前页面
-    if (document.querySelector('.main-content')) {
+    if (document.querySelector('.main-content') && !document.querySelector('.categories-page')) {
         // 首页
-        loadFeaturedPosts();
-        loadRecentPosts();
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        
+        if (category) {
+            // 显示特定分类的文章
+            loadCategoryPosts(decodeURIComponent(category));
+        } else {
+            // 显示所有文章
+            loadFeaturedPosts();
+            loadRecentPosts();
+        }
     } else if (document.querySelector('.post-detail')) {
         // 文章详情页
         loadPostDetail();
         loadComments();
         setupCommentForm();
+    } else if (document.querySelector('.categories-page')) {
+        // 分类页面
+        loadCategories();
+    } else if (document.querySelector('.contact-page')) {
+        // 联系页面
+        setupContactForm();
+        loadLatestComments();
     }
 });
 
@@ -691,4 +707,188 @@ function formatDate(dateString) {
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
+}
+
+// 加载分类页面内容
+function loadCategories() {
+    const categoriesContainer = document.getElementById('categories-container');
+    if (!categoriesContainer) return;
+    
+    // 获取所有分类
+    const categories = {};
+    blogPosts.forEach(post => {
+        if (!categories[post.category]) {
+            categories[post.category] = {
+                name: post.category,
+                count: 0,
+                posts: []
+            };
+        }
+        categories[post.category].count++;
+        categories[post.category].posts.push(post);
+    });
+    
+    // 分类信息
+    const categoryInfo = {
+        '技术': {
+            description: '分享最新的技术文章、编程技巧和开发经验。',
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+        },
+        '生活': {
+            description: '记录生活中的点滴感悟和美好瞬间。',
+            image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+        },
+        '旅行': {
+            description: '分享旅行中的见闻、风景和体验。',
+            image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+        },
+        '读书': {
+            description: '分享读书笔记、书评和阅读感悟。',
+            image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+        }
+    };
+    
+    // 创建分类卡片
+    Object.keys(categories).forEach(categoryName => {
+        const category = categories[categoryName];
+        const info = categoryInfo[categoryName] || {
+            description: '探索更多精彩内容。',
+            image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+        };
+        
+        const categoryCard = document.createElement('div');
+        categoryCard.className = 'category-card';
+        categoryCard.innerHTML = `
+            <div class="category-card-image">
+                <img src="${info.image}" alt="${categoryName}">
+            </div>
+            <div class="category-card-content">
+                <h3 class="category-card-title">
+                    ${categoryName}
+                    <span class="category-card-count">${category.count}</span>
+                </h3>
+                <p class="category-card-description">${info.description}</p>
+                <div class="category-card-posts">
+                    ${category.posts.slice(0, 3).map(post =>
+                        `<a href="post.html?id=${post.id}">${post.title}</a>`
+                    ).join('')}
+                </div>
+            </div>
+        `;
+        
+        // 添加点击事件，跳转到分类筛选页面
+        categoryCard.addEventListener('click', function() {
+            // 这里可以实现跳转到分类筛选页面，或者显示该分类下的所有文章
+            window.location.href = `index.html?category=${encodeURIComponent(categoryName)}`;
+        });
+        
+        categoriesContainer.appendChild(categoryCard);
+    });
+}
+
+// 设置联系表单
+function setupContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    if (!contactForm) return;
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // 在实际应用中，这里应该发送数据到服务器
+        // 这里仅模拟表单提交
+        
+        // 清空表单
+        contactForm.reset();
+        
+        // 显示成功消息
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.textContent = '消息发送成功！我会尽快回复您。';
+        successMessage.style.color = '#28a745';
+        successMessage.style.marginTop = '15px';
+        successMessage.style.padding = '10px';
+        successMessage.style.backgroundColor = '#d4edda';
+        successMessage.style.borderRadius = '4px';
+        contactForm.appendChild(successMessage);
+        
+        // 5秒后移除成功消息
+        setTimeout(() => {
+            successMessage.remove();
+        }, 5000);
+    });
+}
+
+// 加载最新评论
+function loadLatestComments() {
+    const latestCommentsContainer = document.querySelector('.latest-comments');
+    if (!latestCommentsContainer) return;
+    
+    // 获取所有评论并按日期排序
+    const allComments = [];
+    Object.keys(comments).forEach(postId => {
+        comments[postId].forEach(comment => {
+            allComments.push({
+                ...comment,
+                postId: postId
+            });
+        });
+    });
+    
+    // 按日期排序，最新的在前
+    allComments.sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    // 只显示最新的3条评论
+    const latestComments = allComments.slice(0, 3);
+    
+    if (latestComments.length === 0) {
+        latestCommentsContainer.innerHTML = '<li>暂无评论</li>';
+        return;
+    }
+    
+    latestComments.forEach(comment => {
+        const commentItem = document.createElement('li');
+        commentItem.innerHTML = `
+            <div class="comment-item">
+                <div class="comment-author">${comment.author}</div>
+                <div class="comment-excerpt">${comment.content}</div>
+            </div>
+        `;
+        latestCommentsContainer.appendChild(commentItem);
+    });
+}
+
+// 加载特定分类的文章
+function loadCategoryPosts(categoryName) {
+    // 更新页面标题
+    const pageTitle = document.querySelector('.featured-posts h2');
+    if (pageTitle) {
+        pageTitle.textContent = `分类：${categoryName}`;
+    }
+    
+    // 隐藏最新文章部分
+    const recentPostsSection = document.querySelector('.recent-posts');
+    if (recentPostsSection) {
+        recentPostsSection.style.display = 'none';
+    }
+    
+    // 加载该分类的文章
+    const featuredPostsContainer = document.querySelector('.featured-posts .post-grid');
+    if (!featuredPostsContainer) return;
+    
+    const categoryPosts = blogPosts.filter(post => post.category === categoryName);
+    
+    if (categoryPosts.length === 0) {
+        featuredPostsContainer.innerHTML = '<p>该分类下暂无文章。</p>';
+        return;
+    }
+    
+    categoryPosts.forEach(post => {
+        const postCard = createPostCard(post);
+        featuredPostsContainer.appendChild(postCard);
+    });
 }
