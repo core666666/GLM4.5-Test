@@ -201,8 +201,8 @@ nav ul li a:hover {
 
 /* 侧边栏样式 */
 .sidebar {
-    width: 100%;
-    margin-top: 30px;
+    width: 30%;
+    margin-top: 0;
 }
 
 .widget {
@@ -243,6 +243,40 @@ nav ul li a:hover {
     color: #0066cc;
 }
 
+.popular-posts {
+    list-style: none;
+}
+
+.popular-posts li {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #eee;
+}
+
+.popular-posts li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.popular-posts li a {
+    display: block;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.popular-posts li a:hover {
+    color: #0066cc;
+}
+
+.popular-posts li a:before {
+    content: "▶";
+    color: #0066cc;
+    margin-right: 8px;
+    font-size: 12px;
+}
+
 .tag-cloud {
     display: flex;
     flex-wrap: wrap;
@@ -263,9 +297,17 @@ nav ul li a:hover {
 }
 
 /* 文章详情页样式 */
-.post-detail {
+.post-detail-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     margin: 30px 0;
+}
+
+.post-detail {
+    width: 65%;
+    margin-right: 30px;
 }
 
 .post {
@@ -551,5 +593,20 @@ footer p {
     .post-navigation {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .post-detail-container {
+        flex-direction: column;
+    }
+
+    .post-detail {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 0;
     }
 }

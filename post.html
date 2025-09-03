@@ -22,8 +22,9 @@
     </header>
 
     <div class="container">
-        <main class="post-detail">
-            <article class="post">
+        <div class="post-detail-container">
+            <main class="post-detail">
+                <article class="post">
                 <h1 class="post-title" id="post-title">文章标题</h1>
                 <div class="post-meta">
                     <span class="author">作者：<span id="post-author">博主</span></span>
@@ -71,6 +72,17 @@
 
         <aside class="sidebar">
             <div class="widget">
+                <h3>热门文章</h3>
+                <ul class="popular-posts">
+                    <li><a href="#">如何提高编程效率：10个实用技巧</a></li>
+                    <li><a href="#">前端框架对比：React vs Vue vs Angular</a></li>
+                    <li><a href="#">JavaScript异步编程完全指南</a></li>
+                    <li><a href="#">CSS Grid布局：现代网页设计的基础</a></li>
+                    <li><a href="#">Web性能优化：从入门到精通</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
                 <h3>相关文章</h3>
                 <ul class="related-posts">
                     <!-- 相关文章将通过JavaScript动态加载 -->
@@ -87,6 +99,7 @@
                 </ul>
             </div>
         </aside>
+        </div>
     </div>
 
     <footer>
